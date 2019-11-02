@@ -9,6 +9,7 @@ import Foundation
 
 class LBXScanPhotoHelper: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var scanDidSuccess: ((LBXScanResult)->Void)?
+    var scanDidFalse: (()->Void)?
 
     func openPhotoAlbum()
     {
@@ -43,6 +44,8 @@ class LBXScanPhotoHelper: NSObject, UIImagePickerControllerDelegate, UINavigatio
         }
 
         showMsg(title: nil, message: "未找到二维码或条形码")
+
+        scanDidFalse?()
     }
 
     func recognizeQRImage(image: UIImage) -> LBXScanResult? {

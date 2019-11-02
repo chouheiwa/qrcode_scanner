@@ -43,6 +43,7 @@ public class SwiftQrscanPlugin: NSObject, FlutterPlugin {
                     return
             }
             guard let results = helper.recognizeQRImage(image: image) else {
+                result(nil)
                 return
             }
 
@@ -51,10 +52,12 @@ public class SwiftQrscanPlugin: NSObject, FlutterPlugin {
             guard let dic = call.arguments as? [String: Any],
                 let bytes = dic["bytes"] as? FlutterStandardTypedData,
                 let image = UIImage(data: bytes.data) else {
+                    result(nil)
                     return
             }
 
             guard let results = helper.recognizeQRImage(image: image) else {
+                result(nil)
                 return
             }
 
@@ -65,6 +68,10 @@ public class SwiftQrscanPlugin: NSObject, FlutterPlugin {
                 result(results.strScanned)
             }
 
+            helper.scanDidFalse = {
+                result(nil)
+            }
+
             helper.openPhotoAlbum()
         case .generateBarcode:
             guard let dic = call.arguments as? [String: Any] else { return }
@@ -72,8 +79,6 @@ public class SwiftQrscanPlugin: NSObject, FlutterPlugin {
                 QrCodeGenerator.qrcode(codeString:
                     (dic["code"] as? String) ?? "") ?? Data()
             ))
-        default:
-            break
         }
 
     }
