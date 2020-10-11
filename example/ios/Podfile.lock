@@ -1,6 +1,8 @@
 PODS:
   - Flutter (1.0.0)
-  - image_gallery_saver (0.0.1):
+  - flutter_plugin_android_lifecycle (0.0.1):
+    - Flutter
+  - image_gallery_saver (1.5.0):
     - Flutter
   - image_picker (0.0.1):
     - Flutter
@@ -9,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_plugin_android_lifecycle (from `.symlinks/plugins/flutter_plugin_android_lifecycle/ios`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - qrscan (from `.symlinks/plugins/qrscan/ios`)
@@ -16,6 +19,8 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Flutter:
     :path: ".symlinks/flutter/ios"
+  flutter_plugin_android_lifecycle:
+    :path: ".symlinks/plugins/flutter_plugin_android_lifecycle/ios"
   image_gallery_saver:
     :path: ".symlinks/plugins/image_gallery_saver/ios"
   image_picker:
@@ -25,8 +30,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  image_gallery_saver: 73b3cd8ad9c950c739878af9c311744d1bf5405d
-  image_picker: e3eacd46b94694dde7cf2705955cece853aa1a8f
+  flutter_plugin_android_lifecycle: dc0b544e129eebb77a6bfb1239d4d1c673a60a35
+  image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
+  image_picker: 9c3312491f862b28d21ecd8fdf0ee14e601b3f09
   qrscan: d049481ce7caf45b7572dab60e0239c739cfbdbc
 
 PODFILE CHECKSUM: b6a0a141693093b304368d08511b46cf3d1d0ac5
