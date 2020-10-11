@@ -403,7 +403,7 @@ open class LBXScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
             
             let features:[CIFeature]? = detector.features(in: img, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
 
-            print(features)
+            print(features ?? nil)
 
             if( features != nil && (features?.count)! > 0)
             {

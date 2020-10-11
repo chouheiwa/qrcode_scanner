@@ -30,6 +30,12 @@ class LBXPermissions: NSObject {
                     comletion(status == PHAuthorizationStatus.authorized ? true:false)
                 }
             })
+        case .limited:
+            PHPhotoLibrary.requestAuthorization({ (status) in
+                DispatchQueue.main.async {
+                    comletion(status == PHAuthorizationStatus.authorized ? true:false)
+                }
+            })
         @unknown default:
             fatalError()
         }
